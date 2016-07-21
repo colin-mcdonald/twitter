@@ -345,7 +345,7 @@ module Twitter
       end
 
       media.close
-
+      puts 'DONE UPLOADING VIDEO' + init[:media_id].to_s
       Twitter::REST::Request.new(self, :post, 'https://upload.twitter.com/1.1/media/upload.json',
                                  command: 'FINALIZE', media_id: init[:media_id]).perform
     end
